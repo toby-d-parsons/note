@@ -6,7 +6,8 @@
 
   <p>
     <strong>Content:</strong>
-    <%= page.content %>
+    <div class="markdown-content">
+      <%= MarkdownRenderer.render(page.content) %>
+    </div>
   </p>
-
 </div>
