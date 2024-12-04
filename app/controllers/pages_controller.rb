@@ -8,15 +8,18 @@ class PagesController < ApplicationController
 
   # GET /pages/1 or /pages/1.json
   def show
+    @pages = Page.all
   end
 
   # GET /pages/new
   def new
+    @pages = Page.all
     @page = Page.new
   end
 
   # GET /pages/1/edit
   def edit
+    @pages = Page.all
   end
 
   # POST /pages or /pages.json
