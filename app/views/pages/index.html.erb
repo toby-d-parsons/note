@@ -12,6 +12,7 @@
     <%= render page %>
     <p>
       <%= link_to "Show this page", page %>
+      <%= button_to "Destroy this page", @page, method: :delete %>
     </p>
   <% end %>
 </div>
