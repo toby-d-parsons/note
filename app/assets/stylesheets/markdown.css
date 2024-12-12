@@ -6,3 +6,16 @@
         font-style: italic;
     }    
 }
+
+.mc.bold {
+    font-weight: bold;
+}
+
+.mc.bold.start, .mc.bold.end, .mc.italic.start, .mc.italic.end, .mc.bold.italic.start, .mc.bold.italic.end {
+    font-weight: lighter;
+    color: grey;
+}
+
+.mc.italic {
+    font-style: italic;
+}

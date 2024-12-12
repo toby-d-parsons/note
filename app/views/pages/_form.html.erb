@@ -1,10 +1,10 @@
-<%= form_with(model: page) do |form| %>
-  <% if page.errors.any? %>
+<%= form_with(model: @page) do |form| %>
+  <% if @page.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
 
       <ul>
-        <% page.errors.each do |error| %>
+        <% @page.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -16,12 +16,14 @@
     <%= form.text_field :title %>
   </div>
 
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.textarea :content %>
-  </div>
-
+  <div data-controller="content">
+    <div id="content2" contenteditable="true" data-content-target="editable" data-action="input->content#syncContent">
+      <%= @page.content %>
+    </div>
+    <%= form.hidden_field :content, data: { content_target: 'hidden' }, value: @page.content %>
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+
+<%= javascript_include_tag "markdown_renderer" %>

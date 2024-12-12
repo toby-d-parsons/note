@@ -6,8 +6,6 @@
 
   <p>
     <strong>Content:</strong>
-    <div class="markdown-content">
-      <%= MarkdownRenderer.render(page.content) %>
-    </div>
+      <%= simple_format(page.content.html_safe) %>
   </p>
 </div>

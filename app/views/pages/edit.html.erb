@@ -14,3 +14,9 @@
   <%= link_to "Back to pages", pages_path %>
   <%= button_to "Destroy this page", @page, method: :delete %>
 </div>
+
+<div id="content" contenteditable="true">
+  **sdfksdf** *dsfkndsf* hichicken
+</div>
+
+<%= javascript_include_tag "markdown_renderer" %>
